@@ -1,17 +1,22 @@
-function getElementWidth(content, padding, border) {
-    const contentWidth = parseFloat(content);
-    const paddingWidth = parseFloat(padding) * 2; 
-    const borderWidth = parseFloat(border) * 2; 
 
-    const totalWidth = contentWidth + paddingWidth + borderWidth;
-
-
-    return totalWidth;
-}
-
-console.log(getElementWidth("50px", "8px", "4px")); // 74
-console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-console.log(getElementWidth("200px", "0px", "0px")); // 200
+//  3 завдання - якщо в інпут нічого не введено,
+//   не забувайте підставляти “Anonymous”.
+// 4 завдання - всі інпути заповнені. 
+// Тільки тоді виводимо об’єкт у консоль.
+// І це має бути саме об’єкт з двома властивостями, не рядок.
+//   У 3 та 4 завданнях необхідно використовувати 
+// метод для рядків trim() - String.prototype.trim()
 
 
+const input = document.querySelector('#name-input');
+const output = document.querySelector('#name-output');
 
+console.log(input, output);
+
+input.addEventListener('input', (event) => {
+    const trimValue = event.target.value.trim();
+    output.textContent = trimValue || 'Anonymous';
+    console.log(trimValue);
+});
+
+ 
